@@ -5,87 +5,218 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #7289da, #99aab5, #2c2f33, #23272a);
+    background: linear-gradient(45deg, #7289da, #99aab5, #4c4f53, #46484b);
     background-size: 300% 300%;
     animation: gradientMove 10s infinite ease-in-out;
+    
     z-index: -1;
-    transition: background 1s ease-in-out;
 }
 
+
+/* Animação de gradiente */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Ajuste de texto principal */
+/* Ajuste do texto */
 h1, p {
     margin-bottom: 1rem;
     color: #f1f1f1;
 }
 
-/* Mensagem de sucesso */
-#successMessage {
-    display: none;
-} 
-
 /* Estilo da tabela */
 table {
     border-collapse: collapse;
     width: 100%;
-    margin: 0 auto; /* Centraliza a tabela */
+    min-width: 600px; /* Largura mínima para evitar deformações */
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
 }
 
 th, td {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 15px; /* Aumenta o espaçamento interno */
-    color: #fff;
+    padding: 15px;
     text-align: center;
-    vertical-align: middle; /* Centraliza verticalmente */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
 }
 
 th {
-    background-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     font-weight: bold;
-    text-transform: uppercase; /* Letras maiúsculas nos cabeçalhos */
-    font-size: 1.2rem; /* Tamanho maior para cabeçalhos */
+    text-transform: uppercase;
 }
 
 td {
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: background-color 0.3s ease;
-    font-size: 1rem; /* Tamanho da fonte ajustado */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 td:hover {
-    background-color: rgba(230, 217, 217, 0.664); /* Destaque ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
 }
 
-/* Tabela responsiva */
-.table-responsive {
-    overflow-x: auto;
-    margin-top: 20px; /* Espaçamento adicional acima da tabela */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
-    width: 600px;
+/* Linhas alternadas */
+tr:nth-child(even) td {
+    background: rgba(0, 0, 0, 0.4);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 600px){
-    .table-responsive {
-        width: 400px;
+/* Hover nas linhas */
+tr:hover td {
+    background: rgba(255, 255, 255, 0.1);
+    && a {
+        color:#fff;
     }
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
 
+
+/* Contêiner responsivo */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Botões de ações */
+#actions button {
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#actions .btn-info {
+    background: linear-gradient(45deg, #4caf50, #8bc34a);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#actions .btn-info:hover {
+    background: #4caf50;
+}
+
+#actions .btn-warning {
+    background: linear-gradient(45deg, #ffc107, #ff9800);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#actions .btn-warning:hover {
+    background: #ff9800;
+}
+
+#actions .btn-danger {
+    background: linear-gradient(45deg, #f44336, #e91e63);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#actions .btn-danger:hover {
+    background: #e91e63;
+}
+
+/* Ícones dentro dos botões */
+#actions i {
+    margin-right: 5px;
+    font-size: 1rem;
+}
+
+/* Ajuste do título */
+.display-4 {
+    margin-bottom: 0px; /* Reduz a margem inferior do título */
+    padding-top: 50px; 
+}
+
+/* Ajuste da tabela */
+.table-responsive {
+    margin-top: 10px; /* Reduz a margem superior da tabela */
+}
+
+/* Estilos personalizados para o SweetAlert2 */
+.swal-popup {
+    background-color: #343a40 !important;  /* Cor de fundo escura, estilo do seu site */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 90vw; /* Garantir que o alerta seja responsivo */
+}
+
+.swal-title {
+    color: #f8f9fa !important;  /* Cor do título, para contraste com fundo escuro */
+    font-size: 1.6rem;          /* Tamanho do título */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.swal-content {
+    color: #f8f9fa !important;  /* Cor do conteúdo */
+    font-size: 1.1rem;
+}
+
+.swal-confirm {
+    background-color: #28a745 !important;  /* Cor verde para o botão confirmar */
+    color: white !important;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.swal-cancel {
+    background-color: #dc3545 !important;  /* Cor vermelha para o botão cancelar */
+    color: white !important;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#swal2-html-container {
+    color: #fff ;
+}
+
+
+
+
+
+
+/* Estilo para telas pequenas */
+@media screen and (max-width: 600px) {
+    table {
+        font-size: 0.9rem;
+        min-width: 400px; /* Reduz largura mínima */
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    #actions button {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+  /* Responsividade */
+  @media (max-width: 576px) {
+    .swal-popup {
+        width: 80% !important;  /* Ajusta a largura do popup em dispositivos móveis */
+    }
+
+    .swal-title {
+        font-size: 1.4rem;  /* Reduz o tamanho do título em telas pequenas */
+    }
+
+    .swal-content {
+        font-size: 1rem;  /* Reduz o tamanho do texto em telas pequenas */
+    }
+}

@@ -1,5 +1,8 @@
 import express from 'express';
 const app = express();
+import Swal from 'sweetalert2';
+
+
 import bodyParser from 'body-parser';
 import connection from './database/database.js'
 
