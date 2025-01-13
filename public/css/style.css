@@ -24,6 +24,7 @@
 h1, p {
     margin-bottom: 1rem;
     color: #f1f1f1;
+    
 }
 
 /* Estilo da tabela */
@@ -32,8 +33,7 @@ table {
     width: 100%;
     min-width: 600px; /* Largura mínima para evitar deformações */
     margin: 20px auto;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
+    /* background: rgba(255, 255, 255, 0.05); */
     overflow: hidden;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     font-size: 1.1rem;
@@ -51,6 +51,7 @@ th {
     background: rgba(255, 255, 255, 0.2);
     font-weight: bold;
     text-transform: uppercase;
+    
 }
 
 td {
@@ -136,10 +137,10 @@ a {
 }
 
 /* Ajuste do título */
-.display-4 {
-    margin-bottom: 0px; /* Reduz a margem inferior do título */
+/* .display-4 {
+    margin-bottom: 30px;
     padding-top: 50px; 
-}
+} */
 
 /* Ajuste da tabela */
 .table-responsive {
@@ -148,7 +149,7 @@ a {
 
 /* Estilos personalizados para o SweetAlert2 */
 .swal-popup {
-    background-color: #343a40 !important;  /* Cor de fundo escura, estilo do seu site */
+    background-color: #454c5386 !important;  
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -156,26 +157,26 @@ a {
 }
 
 .swal-title {
-    color: #f8f9fa !important;  /* Cor do título, para contraste com fundo escuro */
-    font-size: 1.6rem;          /* Tamanho do título */
+    color: #f8f9fa !important;  
+    font-size: 1.6rem;         
     font-family: 'Arial', sans-serif;
     font-weight: bold;
 }
 
 .swal-content {
-    color: #f8f9fa !important;  /* Cor do conteúdo */
+    color: #f8f9fa !important;  
     font-size: 1.1rem;
 }
 
 .swal-confirm {
-    background-color: #28a745 !important;  /* Cor verde para o botão confirmar */
+    background-color: #28a745 !important;  
     color: white !important;
     border-radius: 5px;
     font-weight: bold;
 }
 
 .swal-cancel {
-    background-color: #dc3545 !important;  /* Cor vermelha para o botão cancelar */
+    background-color: #dc3545 !important;  
     color: white !important;
     border-radius: 5px;
     font-weight: bold;
@@ -184,6 +185,93 @@ a {
 #swal2-html-container {
     color: #fff ;
 }
+
+
+
+
+  /* Fundo transparente com tom escuro para inputs e textarea */
+  #articleTitle {
+    background-color: rgba(44, 42, 42, 0.5);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+#articleTitle:focus {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#articleContent {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+#articleContent:focus {
+    background-color: rgba(0, 0, 0, 0.356);
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+
+
+/* Estilização dos inputs e textarea */
+.styled-input {
+    background-color: rgba(44, 42, 42, 0.5);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    
+}
+
+.styled-input::placeholder {
+    color: rgba(255, 255, 255, 0.932);
+    font-style: italic;
+}
+
+.styled-input:focus {
+    background-color: rgba(48, 45, 45, 0.384);
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilização do botão */
+.styled-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.styled-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Estilização do select */
+select.styled-input {
+    cursor: pointer;
+}
+
+/* Margens adicionais para alinhamento */
+#formCategoria {
+    margin-top: 30px;
+}
+
+h2, h3 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 
 
 

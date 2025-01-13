@@ -17,8 +17,8 @@ app.set('view engine', 'ejs');
 //static
 app.use(express.static('public'));
 // body-parser
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
+app.use(bodyParser.json({ limit: '10mb' }));
 
 // database
 connection

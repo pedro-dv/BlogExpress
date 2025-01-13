@@ -34,7 +34,8 @@ router.get('/admin/categories', (req, res) => {
     });
 });
 
-// Rota para excluir uma categoria
+
+
 router.post('/admin/categories/deletar', (req, res) => {
     const id = req.body.id;
     if (id && !isNaN(id)) {  // Verifica se o ID é válido
@@ -46,7 +47,7 @@ router.post('/admin/categories/deletar', (req, res) => {
             res.redirect('/admin/categories');
         });
     } else {
-        res.redirect('/admin/categories'); // Se não houver ID válido, redireciona
+        res.redirect('/admin/categories');
     }
 });
 

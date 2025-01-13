@@ -1,0 +1,48 @@
+<%- include ('../../partials/head.ejs') %>
+<%- include ('../../partials/navbar.ejs') %>
+
+<!-- Main Content -->
+<main class="container text-center text-white py-5">
+    <h2 class="display-4 fw-bold mb-4 mt-5 py-4">Dê vida às suas ideias com artigos incríveis</h2>
+    <!-- Formulário de Categoria -->
+    <section class="mt-5">
+        <h3 class="text-white mb-4">Adicionar Artigos</h3>
+        <form id="formCategoria" class="row g-3 justify-content-center" method="POST" action="/articles/save">
+            <!-- Campo do Título -->
+            <div class="col-md-6">
+                <input type="text" class="form-control styled-input" id="articleTitle" name="title" placeholder="Digite o título do artigo" required>
+            </div>
+            <!-- Campo do Conteúdo -->
+            <div class="col-md-8">
+                <textarea class="form-control styled-input" id="articleContent" name="content" placeholder="Escreva o artigo aqui!" rows="5"></textarea>
+            </div>
+            <!-- Seleção de Categoria -->
+            <div class="col-md-6">
+                <label for="">Mencionar a categoria existente</label>
+                <select name="category" class="form-control styled-input">
+                    <% categories.forEach((category) => { %>
+                        <option value="<%= category.id%>"><%= category.title %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <!-- Botão de Salvar -->
+            <div class="col-md-12 text-center">
+                <button  class="btn btn-primary btn-lg styled-button">Salvar Artigo</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#articleContent",
+        plugins: [
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'   
+        ]
+    })
+</script>
+
+<%- include ('../../partials/footer.ejs') %>

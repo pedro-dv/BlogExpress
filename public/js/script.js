@@ -1,5 +1,4 @@
-// função para confirma se quer deletar categoria
-function confirmDelete(categoryId) {
+function confirmDelete(articleId) {
     Swal.fire({
         title: 'Você tem certeza?',
         text: "Esta ação não pode ser desfeita!",
@@ -30,7 +29,7 @@ function confirmDelete(categoryId) {
         }
     }).then((result) => {
         if (result.isConfirmed) {
-            document.getElementById('deleteForm-' + categoryId).submit();
+            document.getElementById('deleteForm-' + articleId).submit();  // Submete o formulário de exclusão
         }
     });
 }
