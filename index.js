@@ -2,6 +2,8 @@ import express from 'express';
 const app = express();
 import Swal from 'sweetalert2';
 
+const port = process.env.PORT || 8080;
+
 
 import bodyParser from 'body-parser';
 import connection from './database/database.js'
@@ -11,6 +13,15 @@ import articlesController from './articles/ArticlesController.js';
 
 import Article from './articles/Article.js'
 import Category from './categories/Category.js';
+
+
+// Adicione os logs para verificar as variáveis de ambiente
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_USER:', process.env.DB_USER);
+console.log('DB_PASS:', process.env.DB_PASS);
+console.log('DB_NAME:', process.env.DB_NAME);
+console.log('DB_PORT:', process.env.DB_PORT);
+
 
 // view engien
 app.set('view engine', 'ejs');
@@ -67,6 +78,8 @@ app.get('/:slug', (req, res) => {
 });
 
 
-app.listen(8080, () => {
-    console.log("O Servidor esta rodando!")
+
+
+app.listen(port, () => {
+    console.log(`O Servidor está rodando na porta ${port}!`)
 });
