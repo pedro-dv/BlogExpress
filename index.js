@@ -24,9 +24,9 @@ app.use(bodyParser.json({ limit: '10mb' }));
 connection
     .authenticate()
     .then(() => {
-        console.log("Conexão feita com sucesso!");
+        console.log("Conexão com o banco de dados bem-sucedida!");
     }).catch((err) => {
-        console.log("ERRO:", err)
+        console.log("Erro ao conectar ao banco de dados:", err)
     });
 
 app.use('/', categoriesController);
