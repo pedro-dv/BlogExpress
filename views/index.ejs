@@ -1,0 +1,110 @@
+<%- include('partial/head.ejs') %>
+<%- include('partial/homeNavBar.ejs') %>
+<body>
+    <!-- Slider de Destaque -->
+    <section class="carousel slide" id="carouselExampleCaptions" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./image/astronalta.jpg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Boas-vindas ao meu blog</h5>
+                    <p>Explore conteúdos incríveis e novidades!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./image/terra.jpeg" class="d-block w-100" alt="Post Principal 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Boas-vindas ao meu blog</h5>
+                    <p>Explore conteúdos incríveis e novidades!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./image/terra3.png" class="d-block w-100" alt="Post Principal 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Boas-vindas ao meu blog</h5>
+                    <p>Explore conteúdos incríveis e novidades!</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+      
+
+    </section>
+
+      <!-- Chamada para Ação -->
+    <section class="cta bg-dark text-white py-5 mt-5 mb-5">
+        <div class="container text-center">
+            <h2>Junte-se ao nosso blog!</h2>
+            <p>Adicione categoria e artigos</p>
+            <a href="/admin/categories/new" class="btn btn-secondary btn-lg me-4">Adicionar Categoria</a>
+            <a href="/admin/articles/new" class="btn btn-secondary btn-lg">Adicionar Artigo</a>
+        </div>
+    </section>
+
+    
+
+    <!-- Postagens Recentes -->
+    <section class="container mt-3 pt-5 pb-5">
+        <h2 class="text-center">Postagens Recentes</h2>
+        
+        <div class="row mt-5">
+            <!-- Exemplo estático de um artigo -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./image/terra3.png" class="card-img-top" alt="Imagem do Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Post de Exemplo 1</h5>
+                        <p class="card-text">Breve descrição do post 1.</p>
+                        <a href="/post/1" class="btn btn-secondary">Leia mais</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Exemplo estático de um artigo -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./image/terra.jpeg" class="card-img-top" alt="Imagem do Post 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Post de Exemplo 2</h5>
+                        <p class="card-text">Breve descrição do post 2.</p>
+                        <a href="/post/1" class="btn btn-secondary">Leia mais</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Loop para exibir artigos do banco de dados -->
+            <% articles.forEach(article => { %>
+            <div class="col-md-4">
+                <div class="card">
+                    <!-- Exibe a imagem da categoria associada ao artigo -->
+                    <img src="/uploads/<%= article.category.image %>" class="card-img-top" alt="<%= article.category.title %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= article.title %></h5>
+                        <p class="card-text"><%= article.description %></p> <!-- Exibe descrição do artigo -->
+                        <a href="/<%= article.slug %>" class="btn btn-secondary">Leia mais</a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+
+        </div>
+    </section>
+    
+      <!-- Chamada para Ação -->
+    <section class="cta bg-dark text-white py-5 mb-5 mt-5">
+        <div class="container text-center">
+            <h2>Veja categorias e artigos!</h2>
+            <p>listagem do blog</p>
+            <a href="/admin/categories" class="btn btn-secondary btn-lg me-4">Ver Categorias</a>
+            <a href="/admin/articles" class="btn btn-secondary btn-lg">Ver Artigos</a>
+        </div>
+    </section>
+
+</body>
+<%- include('partial/footer.ejs') %>

@@ -1,0 +1,35 @@
+<%- include('partial/head.ejs') %>
+<%- include('partial/homeNavBar.ejs') %>
+
+<main class="container mt-5 pt-5 container-article">
+    <article class="mt-4">
+        <div class="card">
+            <div class="card-head">
+                <h1 class="text-center mb-4"><%= article.title%></h1>
+                <div class="text-center mb-4">
+                    <span class="text-muted">Publicado em 12 de janeiro de 2025</span> |
+                    <span class="text-muted">Por <strong>Autor do Blog</strong></span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="content">
+                    <%- article.body %>  
+                </div>
+            </div>
+        </div>    
+    </article>
+   
+   
+        
+       
+        
+    
+
+    <!-- Botões de Navegação -->
+    <div class="d-flex justify-content-between mt-5">
+        <a href="/" class="btn btn-secondary">← voltar</a>
+    </div>
+</main>
+
+
+<%- include('partial/footer.ejs') %>

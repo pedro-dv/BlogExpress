@@ -32,4 +32,8 @@ function confirmDelete(articleId) {
             document.getElementById('deleteForm-' + articleId).submit();  // Submete o formulário de exclusão
         }
     });
+
+
+
+
 }

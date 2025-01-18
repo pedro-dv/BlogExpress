@@ -1,11 +1,11 @@
-<%- include('../../partials/head.ejs') %>
+<%- include('../../partial/head.ejs') %>
 
-<%- include('../../partials/navbar.ejs') %>
+<%- include('../../partial/navbar.ejs') %>
 
 <!-- Main Content -->
 <main id="main-tabela" class="container text-center text-white py-5 ">
     <h2 class="display-4 fw-bold mb-4 mt-5 py-4">Revise os Artigos</h2> 
-    <a class="btn btn-success" href="/admin/articles/new">criar novo artigo</a>
+    <a class="btn btn-success" href="/admin/articles/new"> Criar novo artigo</a>
     <!-- Formulário de Categoria -->
     <section class="d-flex justify-content-center mt-3"> 
         <div class="table-responsive">
@@ -30,11 +30,10 @@
                         <td><%= article.category.title %></td>
                         <td>
                             <div id="actions" class="btn-group" role="group">
+                               
                                     <button type="submit"  class="btn btn-info btn-sm" title="Visualizar">
-                                    <i class="fas fa-eye"></i> Visualizar
-                                    </button>
-                                    <button type="submit"  class="btn btn-warning btn-sm" title="Editar">
-                                        <i class="fas fa-edit"></i> Editar
+                                        <input type="hidden" name="id" value="<%= article.id %>">
+                                        <a href="/<%= article.slug %>"><i class="fas fa-eye"></i> Visualizar</a>
                                     </button>
                                     <form action="/articles/deletar" method="POST" id="deleteForm-<%= article.id %>">
                                         <input type="hidden" name="id" value="<%= article.id %>">
@@ -56,4 +55,4 @@
 </main>
 
 
-<%- include('../../partials/footer.ejs') %>
+<%- include('../../partial/footer.ejs') %>

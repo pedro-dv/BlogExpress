@@ -21,11 +21,28 @@
 }
 
 /* Ajuste do texto */
-h1, p {
+h2, h1, p {
     margin-bottom: 1rem;
     color: #f1f1f1;
     
 }
+
+
+/* navbarHome */
+.navbar.bg-transparent {
+    background: linear-gradient(90deg, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    backdrop-filter: blur(5px); /* Para um efeito de desfoque */
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Adicionando fundo para a seção de categoria */
+.add-category-section {
+    background: linear-gradient(135deg, #1c1c1d65, #2574fc8c); /* Gradiente de fundo */
+    padding: 40px 0;  /* Adicionando espaço interno */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+
 
 /* Estilo da tabela */
 table {
@@ -136,11 +153,6 @@ a {
     font-size: 1rem;
 }
 
-/* Ajuste do título */
-/* .display-4 {
-    margin-bottom: 30px;
-    padding-top: 50px; 
-} */
 
 /* Ajuste da tabela */
 .table-responsive {
@@ -268,12 +280,74 @@ select.styled-input {
     margin-top: 30px;
 }
 
-h2, h3 {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+
+
+
+
+
+/* Estilo do Slider */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Estilo das Postagens Recentes */
+.card {
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+/* Chamada para Ação */
+.cta {
+    background-color: #2c3e50;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.cta p {
+    font-size: 1.2rem;
+}
+
+.blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-left: 4px solid #007bff;
+    font-style: italic;
+}
+
+
+article > .card{
+    background-color: #1e1f1fb0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
 
+footer {
+    margin-top: 40px !important;
+}
 
 
 
@@ -283,6 +357,7 @@ h2, h3 {
     table {
         font-size: 0.9rem;
         min-width: 400px; /* Reduz largura mínima */
+        
     }
 
     th, td {
@@ -293,9 +368,14 @@ h2, h3 {
         padding: 8px 10px;
         font-size: 0.8rem;
     }
+    input {
+        max-width: 400px;
+        margin: auto;
+    }
 }
+
   /* Responsividade */
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
     .swal-popup {
         width: 80% !important;  /* Ajusta a largura do popup em dispositivos móveis */
     }
@@ -306,5 +386,9 @@ h2, h3 {
 
     .swal-content {
         font-size: 1rem;  /* Reduz o tamanho do texto em telas pequenas */
+    }
+
+    .card {
+       margin: 30px 35px;
     }
 }
