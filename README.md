@@ -2,6 +2,13 @@
 
 **BlogExpress** é uma aplicação de blog administrável construída com Node.js e Express. O projeto oferece funcionalidades para gestão de posts, autenticação de usuários e upload de imagens. Com uma interface simples e intuitiva, permite a criação, edição e exclusão de posts com facilidade.
 
+
+![blog-express](https://github.com/user-attachments/assets/17fa31a5-4e3b-4895-b110-0c32db182e3f)
+
+![addCategory](https://github.com/user-attachments/assets/d77f0852-6c7e-4f29-b814-257d0489ca6b)
+
+![addArticles](https://github.com/user-attachments/assets/bb0bd284-7b09-4274-bc96-7e23537c4a45)
+
 ## Funcionalidades
 
 - **Autenticação de Usuário**: Permite o login e registro de usuários com senha segura.
